@@ -6,20 +6,16 @@ class CampersController < ApplicationController
 
     def show
         @camper = Camper.find(params[:id])
-        @activities = CamperActivity.all
-        # if CamperActivity camper_id == @camper.id
-        # then put list of all CamperActivities
-        # camper_activity = CamperActivity.each do |camper_activity|
-        #     byebug
-        #     if camper_activity
-        #     end
-        # end 
     end
 
-    private
-
-    def activity_params(*arg)
-        params.require(:camper).permit(*arg)
+    def new
+        @camper = Camper.new
     end
 
+    def create
+        camper_params = params.require(:camper).permit(:name, :age)
+        @camper = Camper.create(camper_params)
+
+        redirect_to camper_path(@camper.id)
+    end
 end

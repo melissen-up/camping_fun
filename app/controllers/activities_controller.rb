@@ -7,11 +7,5 @@ class ActivitiesController < ApplicationController
     def show
         @activity = Activity.find(params[:id])
     end
-
-    private
-
-    def activity_params(*arg)
-        params.require(:activity).permit(*arg)
-    end
     
 end

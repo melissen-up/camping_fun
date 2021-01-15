@@ -5,20 +5,14 @@
 Age: <%= @camper.age %>
 <br>
 
-Activities: 
-<% a = @activities.each do |activity|  %>
-        <% if activity.camper_id == @camper.id %>
-        <% activity.activity_id%>
-        <% end %>
-    <%= a %>
-    <% end %>
-   
+Activities: <% @camper.signups.each do |signup_inst| %>
+    <ul> 
 
+    <li> <%= signup_inst.activity.name %>
+    </li>
 
+    </ul>
+
+    <%end%>
 
 </p>
-
-
-# name
-# age
-# all activities signed up for

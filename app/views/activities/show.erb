@@ -1,0 +1,17 @@
+<h1> This is the Activity Page </h1>
+
+<p>Name: <%= @activity.name %>
+
+<br>
+
+Activities: <% @activity.signups.each do |signup_inst| %>
+    <ul> 
+
+    <li> <%= signup_inst.camper.name %>
+    </li>
+
+    </ul>
+
+    <%end%>
+
+</p>
