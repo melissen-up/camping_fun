@@ -1,0 +1,24 @@
+<h1> This is the Camper Page </h1>
+
+<p>Name: <%= @camper.name %>
+<br>
+Age: <%= @camper.age %>
+<br>
+
+Activities: 
+<% a = @activities.each do |activity|  %>
+        <% if activity.camper_id == @camper.id %>
+        <% activity.activity_id%>
+        <% end %>
+    <%= a %>
+    <% end %>
+   
+
+
+
+</p>
+
+
+# name
+# age
+# all activities signed up for
